@@ -3,7 +3,7 @@ export default function Login() {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-neutral-900">
+    <div className="flex items-center justify-center min-h-screen  bg-neutral-900">
         <div>
             <div className="flex justify-center">
                   <img src="/src/assets/react.svg" alt="E-Capstone Logo" className="h-15 w-20 border mb-4 rounded-4xl" />
