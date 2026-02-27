@@ -3,6 +3,8 @@ import Login from "./auth/login";
 import Signup from "./auth/signup";
 import Dashboard from "./student_view/studentDashboard";
 import Navbar from "./navbar/navbar";
+import StudentArchive from "./student_view/studentArchive";
+import StudentProfile from "./student_view/studentProfile";
 
 function App() {
   return (
@@ -17,6 +19,24 @@ function App() {
             <>
               <Navbar />
               <Dashboard />
+            </>
+          }
+        />
+           <Route
+          path="/studentArchive"
+          element={
+            <>
+              <Navbar />
+              <StudentArchive />
+            </>
+          }
+        />
+            <Route
+          path="/Profile"
+          element={
+            <>
+              <Navbar />
+              <StudentProfile />
             </>
           }
         />

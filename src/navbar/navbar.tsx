@@ -1,12 +1,32 @@
 import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+
+    const getPageTitle = () => {
+  switch (location.pathname) {
+    case "/dashboard":
+      return "Dashboard";
+    case "/studentArchive":
+      return "Archive";
+    case "/Profile":
+      return "Profile";
+    default:
+      return "";
+  }
+};
+
+useEffect(() => {
+  setIsMenuOpen(false);
+}, [location.pathname]);
 
   return (
     <>
     <div className="font-Poppins">
-      <nav className="fixed top-0 left-0 h-full w-64 bg-4CAF50 shadow-md z-50 hidden sm:block">
+      <nav className="fixed top-0 left-0 h-full w-64  shadow-md z-50 hidden sm:block">
           <div className="flex flex-col h-full py-3">
             <div className="p-4 border-gray-300 border-b">
             <div className="flex my-2 gap-3 ">
@@ -33,9 +53,36 @@ export default function Navbar() {
             </div>
             
            <nav className="flex flex-col mt-4 px-4 gap-3">
-              <a href="" className="py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl truncate transition ">Dashboard</a>
-              <a href="" className="py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl truncate transition">Archive</a>
-              <a href="" className="py-2 px-6 text-gray-900  hover:bg-gray-100 rounded-2xl font-medium text-xl truncate transition">Profile</a>
+              <NavLink
+                  to="/dashboard"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                      }
+>
+                    Dashboard
+                  </NavLink>
+              <NavLink
+                  to="/studentArchive"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                      }
+>
+                    Archive
+                  </NavLink>
+              <NavLink
+                  to="/Profile"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                      }
+>
+                    Profile
+                  </NavLink>
            </nav>
 
            <div className="p-4 border-t mt-auto border-gray-300">
@@ -47,8 +94,8 @@ export default function Navbar() {
         </nav>
 
          {/* Mobile Menu */}
-<nav className="fixed top-0 left-0 w-full bg-white shadow-md z-40 sm:hidden">
-  <div className="flex items-center justify-between px-4 py-4">
+<nav className="fixed top-0 left-0 sm:left-64 w-full sm:w-[calc(100%-16rem)] bg-white shadow-md z-40">
+  <div className="flex items-center justify-between px-4 py-4 ">
     <div className="flex items-center gap-4">
     <button 
       onClick={() => setIsMenuOpen(true)} 
@@ -57,11 +104,15 @@ export default function Navbar() {
       <div>
         
       </div>
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <svg className="h-7 w-7 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
     </button>
-    <h1 className="text-xltext-gray-800 font-semibold capitalize">Dashboard</h1>
+    <div className="flex flex-col">
+    <h1 className="text-xl text-gray-800 font-semibold capitalize">{getPageTitle()}</h1>
+    <p className="hidden sm:block">Student view</p>
+    </div>
+
     </div>
 
      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -115,9 +166,36 @@ export default function Navbar() {
                 </div>
             </div>
               <nav className="flex flex-col mt-4 px-4 gap-3">
-              <a href="" className="py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md truncate transition ">Dashboard</a>
-              <a href="" className="py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md truncate transition">Archive</a>
-              <a href="" className="py-2 px-6 text-gray-900  hover:bg-gray-100 rounded-2xl font-medium text-md truncate transition">Profile</a>
+                <NavLink
+                  to="/dashboard"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                      }
+>
+                    Dashboard
+                  </NavLink>
+              <NavLink
+                  to="/studentArchive"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                      }
+>
+                    Archive
+                  </NavLink>
+              <NavLink
+                  to="/Profile"
+                       className={({ isActive }) =>
+                        isActive
+                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                      }
+>
+                    Profile
+                  </NavLink>
            </nav>
 
            <div className="p-3 border-t mt-auto border-gray-300">
