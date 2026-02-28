@@ -110,7 +110,7 @@ useEffect(() => {
     </button>
     <div className="flex flex-col">
     <h1 className="text-xl text-gray-800 font-semibold capitalize">{getPageTitle()}</h1>
-    <p className="hidden sm:block">Student view</p>
+    <p className="hidden md:block">Student view</p>
     </div>
 
     </div>
@@ -128,7 +128,7 @@ useEffect(() => {
   onClick={() => setIsMenuOpen(false)}
 />
 
-<aside className={`fixed top-0 left-0 h-full w-72 bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-in-out sm:hidden ${
+<aside className={`fixed top-0 left-0 h-full w-72 bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
     isMenuOpen ? "translate-x-0" : "-translate-x-full"
   }`}>
   
