@@ -1,15 +1,10 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import { useEffect } from "react";
 
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const location = useLocation();
-
-    if (location.pathname === "/login" || location.pathname === "/signup") {
-  return null;
-}
 
     const getPageTitle = () => {
   switch (location.pathname) {
@@ -62,30 +57,33 @@ useEffect(() => {
                   to="/dashboard"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                          ? "flex items-center gap-2  py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
                       }
 >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
                     Dashboard
                   </NavLink>
               <NavLink
                   to="/studentArchive"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "flex items-center gap-2  py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
                       }
 >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
                     Archive
                   </NavLink>
               <NavLink
                   to="/Profile"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
+                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
                       }
 >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     Profile
                   </NavLink>
            </nav>
@@ -171,34 +169,39 @@ useEffect(() => {
                 </div>
             </div>
               <nav className="flex flex-col mt-4 px-4 gap-3">
-                <NavLink
+                   <NavLink
                   to="/dashboard"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                            ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                            : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
                       }
->
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
                     Dashboard
                   </NavLink>
+
+               
               <NavLink
                   to="/studentArchive"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                          ? "flex items-center  gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
                       }
->
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
                     Archive
                   </NavLink>
               <NavLink
                   to="/Profile"
                        className={({ isActive }) =>
                         isActive
-                          ? "py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                          : "py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
+                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
+                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
                       }
->
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     Profile
                   </NavLink>
            </nav>

@@ -1,18 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./auth/login";
 import Signup from "./auth/signup";
-import Dashboard from "./student_view/studentDashboard";
-import Navbar from "./navbar/navbar";
-import StudentArchive from "./student_view/studentArchive";
-import StudentProfile from "./student_view/studentProfile";
-import Deliverablesbuttons from "./Dashboard_not_invited_student/Deliverablesbuttons";
-import UploadButton from "./Dashboard_not_invited_student/uploadbutton";
-import TaskButton from "./Dashboard_not_invited_student/taskbutton";
+import Dashboard from "./student/student_view/studentDashboard";
+import Navbar from "./student/navbar/navbar";
+import StudentArchive from "./student/student_view/studentArchive";
+import StudentProfile from "./student/student_view/studentProfile";
+import Deliverablesbuttons from "./student/Dashboard_not_invited_student/Deliverablesbuttons";
+import UploadButton from "./student/Dashboard_not_invited_student/uploadbutton";
+import TaskButton from "./student/Dashboard_not_invited_student/taskbutton";
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />

@@ -7,7 +7,7 @@ export default function Dashboard() {
         <div className="lg:ml-64 mt-20 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
             <h1 className="text-3xl font-semibold text-gray-800 mt-10">Welcome back, Kit Francis!</h1>
             <p className="text-gray-600 mt-2">Track your project progress and manage deliverables.</p>
-            <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5">
+            <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5 md:mt-10">
   
               <button className="flex-1 text-sm bg-white text-black font-medium py-2 rounded-full shadow-sm">
                 Deliverables
