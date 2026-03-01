@@ -2,9 +2,14 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+
+    if (location.pathname === "/login" || location.pathname === "/signup") {
+  return null;
+}
 
     const getPageTitle = () => {
   switch (location.pathname) {
@@ -110,7 +115,7 @@ useEffect(() => {
     </button>
     <div className="flex flex-col">
     <h1 className="text-xl text-gray-800 font-semibold capitalize">{getPageTitle()}</h1>
-    <p className="hidden md:block">Student view</p>
+    <p className="hidden sm:block">Student view</p>
     </div>
 
     </div>

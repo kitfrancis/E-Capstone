@@ -5,16 +5,22 @@ import Dashboard from "./student_view/studentDashboard";
 import Navbar from "./navbar/navbar";
 import StudentArchive from "./student_view/studentArchive";
 import StudentProfile from "./student_view/studentProfile";
+import Deliverablesbuttons from "./Dashboard_not_invited_student/Deliverablesbuttons";
+import UploadButton from "./Dashboard_not_invited_student/uploadbutton";
+import TaskButton from "./Dashboard_not_invited_student/taskbutton";
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+
+        {/* StudentPages */}
         <Route
-          path="/dashboard"
+           path="/dashboard"
           element={
             <>
               <Navbar />
@@ -37,6 +43,33 @@ function App() {
             <>
               <Navbar />
               <StudentProfile />
+            </>
+          }
+        />
+        <Route
+          path="/deliverables"
+          element={
+            <>
+              <Navbar />
+              <Deliverablesbuttons />
+            </>
+          }
+        />
+        <Route
+          path="/uploadbutton"
+          element={
+            <>
+              <Navbar />
+              <UploadButton />
+            </>
+          }
+        />
+        <Route
+          path="/taskbutton"
+          element={
+            <>
+              <Navbar />
+              <TaskButton />
             </>
           }
         />

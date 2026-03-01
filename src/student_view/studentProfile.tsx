@@ -1,7 +1,7 @@
 export default function studentprofile(){
     return(
         <div className="scroll-smooth font-Poppins  ">
-        <div className="lg:ml-64 mt-20 sm:mt-25 mx-3 px-3 max-h-auto lg:px-20">
+        <div className="lg:ml-64 mt-20 sm:mt-25 mx-3 px-3 max-h-auto lg:px-20 ">
             <h1 className="text-3xl font-semibold text-gray-800 mt-10">Profile Settings</h1>
             <p className="text-gray-600 mt-2">Manage your account information</p>
             <div className="h-auto bg-gray-50 my-6  rounded-xl border border-gray-300">
@@ -19,20 +19,20 @@ export default function studentprofile(){
                 </div>
                 <div className="flex flex-col mt-6 gap-1">
                     <label className="text-md font-semibold">Full Name</label>
-                    <input type="text" className="bg-white border border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[full name]" />
+                    <input type="text" className="bg-white border border-gray-300 text-sm placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[full name]" />
                     <label className="mt-2 font-semibold">Email Address</label>
-                    <input type="email" className="bg-white border border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[email address]" />
+                    <input type="email" className="bg-white border border-gray-300 text-sm placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[email address]" />
                     <label className="mt-2 font-semibold">Student ID</label>
-                    <input type="text" className="bg-white border border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[student ID]" />
+                    <input type="text" className="bg-white border border-gray-300 text-sm    placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[student ID]" />
                     <label className="mt-2 font-semibold">Department</label>
-                    <select name="department" id="department" className="bg-white border border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
+                    <select name="department" id="department" className="bg-white border text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
                         <option value="computer-science">Computer Science</option>
                         <option value="information-technology">Information Technology</option>
                         <option value="software-engineering">Software Engineering</option>
                         <option value="BLIS">BLIS</option>
                     </select>
                     <label className="mt-2 font-semibold">Role</label>
-                    <input type="text" className="bg-gray-100 border border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[role]" disabled />
+                    <input type="text" className="bg-gray-100 border text-sm border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[role]" disabled />
                     <p className="text-sm text-gray-500">Role connot be changed. Contact your administrator if this is incorrect.</p>
                     <button className="w-full bg-black text-white py-2 mt-6 rounded-lg hover:bg-gray-800 transition-colors duration-300">Save Changes</button>
                 </div>

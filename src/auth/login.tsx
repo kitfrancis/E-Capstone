@@ -24,8 +24,8 @@ export default function Login() {
                    
                     <input type="password" className="w-full text-white px-4 py-2 mt-2 border border-gray-500 rounded-md" />
                    
-                    <a href="/Dashboard" className="w-full flex items-center justify-center bg-emerald-600 text-white px-4 py-2 mt-6 rounded-md hover:bg-emerald-700 transition-colors duration-300">
-                        Sign in
+                    <a href="/dashboard" className="w-full flex items-center justify-center bg-emerald-600 text-white px-4 py-2 mt-6 rounded-md hover:bg-emerald-700 transition-colors duration-300">
+                        Log in
                     </a>
                         <p className="mt-4 text-sm text-gray-400">Don't have an account? <a href="/signup" className="text-blue-500">Sign up</a></p>
                 </div>
