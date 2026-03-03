@@ -1,10 +1,10 @@
-export default function StudentArchive() {
+export default function Archive() {
   return (
     <div className="scroll-smooth font-Poppins">
        <div className="lg:ml-64 mt-20 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
             <h1 className="text-3xl font-semibold text-gray-800 mt-10">Project Archive and Repository</h1>
             <p className="text-gray-600 mt-2">Searchable digital library of completed thesis and capstone projects</p>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-5 md:mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-4  gap-4 mt-5 md:mt-10">
               <div className="bg-gray-200 gap-1  flex flex-col items-center justify-center rounded-lg p-4 px-6">
                 <div className="text-center my-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-file-text h-8 w-8 mx-auto mb-2 text-blue-600" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
