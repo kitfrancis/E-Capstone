@@ -9,8 +9,12 @@ export default function Login() {
     <div className="font-Poppins bg-gray-100">
         <div className="flex items-center justify-center h-screen px-6 lg:px-50 md:px-20">
             <div className="bg-white p-8 rounded-2xl w-full max-w-md max-h-auto">
+              <button onClick={() => navigate("/landingpage")} className="flex items-center font-semibold text-gray-900 hover:bg-gray-200 rounded-lg px-4 p-1 mb-4 md:text-md text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left h-4 w-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                Back to Role Selection
+              </button>
                 <h1 className="text-2xl text-center font-medium">Thesis Management System</h1>
-                <p className="text-center text-md  text-gray-500 mt-2">Comprehensive project tracking for students, advisers and instructors</p>
+                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as [Role]</p>
                 <div className="flex flex-col">
                  <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-6 md:mt-7 lg:mt-8">
   
