@@ -1,24 +1,32 @@
 import { useState } from "react";
-import { NavLink, } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+     const location = useLocation();
 
     const getPageTitle = () => {
-  switch (location.pathname) {
-    case "/dashboard":
-      return "Dashboard";
-    case "/studentArchive":
-      return "Archive";
-    case "/Profile":
-      return "Profile";
-    default:
-      return "";
+  if (
+    location.pathname === "/dashboard" ||
+    location.pathname === "/deliverablesbutton" ||
+    location.pathname === "/uploadbutton" ||
+    location.pathname === "/taskbutton"
+  ) {
+    return "Dashboard";
+  } else if (location.pathname === "/deliverables") { 
+    return "Deliverables";
+  }
+  else if (location.pathname === "/studentArchive") {
+    return "Archive";
+  } else if (location.pathname === "/Profile") {
+    return "Profile";
+  } else {
+    return "";
   }
 };
-
 useEffect(() => {
   setIsMenuOpen(false);
 }, [location.pathname]);
@@ -55,8 +63,11 @@ useEffect(() => {
            <nav className="flex flex-col mt-4 px-4 gap-3">
               <NavLink
                   to="/dashboard"
-                       className={({ isActive }) =>
-                        isActive
+                       className={({}) =>
+                            location.pathname.startsWith("/dashboard") ||
+                            location.pathname.startsWith("/deliverablesbutton") ||
+                            location.pathname.startsWith("/uploadbutton") ||
+                            location.pathname.startsWith("/taskbutton")
                           ? "flex items-center gap-2  py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
                           : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
                       }
@@ -117,10 +128,60 @@ useEffect(() => {
     </div>
 
     </div>
+      
+    <button
+        onClick={() => setOpen(true)}
+        className="p-2 rounded-full hover:bg-gray-200"
+      >
+        <svg
+          className="h-7 w-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M14.857 17.082a2.333 2.333 0 01-4.714 0M17.513 15.323c.368-1.312 1.462-2.442 1.487-4.823 0-2.103-1.635-3.564-3.474-3.927a3.333 3.333 0 00-6.652 0c-1.84.363-3.474 1.824-3.474 3.927 0 2.381 1.119 3.511 1.487 4.823l.11.39h10.433l.11-.39z"
+          />
+        </svg>
+      </button>
 
-     <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a2.333 2.333 0 01-4.714 0M17.513 15.323c.368-1.312 1.462-2.442 1.487-4.823 0-2.103-1.635-3.564-3.474-3.927a3.333 3.333 0 00-6.652 0c-1.84.363-3.474 1.824-3.474 3.927 0 2.381 1.119 3.511 1.487 4.823l.11.39h10.433l.11-.39z" />
-</svg>
+      {/* Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/30"
+          onClick={() => setOpen(false)}
+        ></div>
+      )}
+
+      {/* Notification Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-4 border-b flex justify-between items-center">
+          <h2 className="font-semibold text-lg">Notifications</h2>
+          <button onClick={() => setOpen(false)}>✕</button>
+        </div>
+
+        <div className="p-4 space-y-3 text-sm">
+          <div className="p-3 rounded-lg hover:bg-gray-100">
+            📄 Student submitted capstone proposal
+          </div>
+
+          <div className="p-3 rounded-lg hover:bg-gray-100">
+            👨‍🏫 Adviser commented on your thesis
+          </div>
+
+          <div className="p-3 rounded-lg hover:bg-gray-100">
+            📅 Defense schedule updated
+          </div>
+        </div>
+      </div>
+
   </div>
 </nav>
 
@@ -171,8 +232,11 @@ useEffect(() => {
               <nav className="flex flex-col mt-4 px-4 gap-3">
                    <NavLink
                   to="/dashboard"
-                       className={({ isActive }) =>
-                        isActive
+                       className={({}) =>
+                            location.pathname.startsWith("/dashboard") ||
+                            location.pathname.startsWith("/deliverablesbutton") ||
+                            location.pathname.startsWith("/uploadbutton") ||
+                            location.pathname.startsWith("/taskbutton")
                             ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
                             : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
                       }

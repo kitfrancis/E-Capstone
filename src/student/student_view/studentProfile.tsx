@@ -34,7 +34,7 @@ export default function studentprofile(){
                     <label className="mt-2 font-semibold">Role</label>
                     <input type="text" className="bg-gray-100 border text-sm border-gray-300 placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[role]" disabled />
                     <p className="text-sm text-gray-500">Role connot be changed. Contact your administrator if this is incorrect.</p>
-                    <button className="w-full bg-black text-white py-2 mt-6 rounded-lg hover:bg-gray-800 transition-colors duration-300">Save Changes</button>
+                    <button className=" flex  items-center justify-center w-full bg-black text-white py-2 mt-6 rounded-lg hover:bg-gray-800 transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-save h-4 w-4 mr-2"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"></path><path d="M7 3v4a1 1 0 0 0 1 1h7"></path></svg>Save Changes</button>
                 </div>
 
             </div> 

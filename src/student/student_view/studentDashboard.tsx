@@ -4,9 +4,47 @@ export default function Dashboard() {
   const navigate = useNavigate();
   return (
     <div className="scroll-smooth font-Poppins">
-        <div className="lg:ml-64 mt-20 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
+        <div className="lg:ml-64 mt-23 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
             <h1 className="text-3xl font-semibold text-gray-800 mt-10">Welcome back, Kit Francis!</h1>
             <p className="text-gray-600 mt-2">Track your project progress and manage deliverables.</p>
+        <div className="bg-gray-100 rounded-2xl p-1  max-h-auto  mt-5 md:mt-8">
+            <div className="gap-1 mx-5 my-5">
+              <div className="flex flex-col mb-5 md:mb-8 ">
+           <h1 className="font-semibold text-md">Team Overview</h1>
+          <p className="text-gray-500 text-md">[Team name - Project]</p>
+              </div>
+
+          <div className="space-y-4">
+              <div className="flex justify-between items-center mb-2 w-full">
+                <h2 className="text-sm font-medium">Current Phase: <span className="font-semibold">Development</span></h2>
+                <span className="text-sm font-semibold">10%</span>
+              </div>
+              <div className="bg-gray-300 h-2 rounded-full w-full">
+                <div className="bg-gray-700 h-2 rounded-full" style={{ width: "10%" }}></div>
+              </div>
+              
+            <div className=" grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="text-center bg-green-50 p-3 rounded-xl">
+                <h1 className="text-2xl font-semibold text-green-700">1</h1>
+                  <h1 className="text-sm text-gray-600">Approved</h1>
+              </div>
+               <div className="text-center bg-blue-50 p-3 rounded-xl">
+                <h1 className="text-2xl font-semibold text-blue-700">1</h1>
+                  <h1 className="text-sm text-gray-600">Under Review</h1>
+              </div>
+               <div className="text-center bg-yellow-50 p-3 rounded-xl">
+                <h1 className="text-2xl font-semibold text-yellow-700">0</h1>
+                  <h1 className="text-sm text-gray-600">Needs Revision</h1>
+              </div>
+
+            </div>
+            
+          </div>
+          
+
+            </div>
+        </div>
+
             <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5 md:mt-10">
   
               <button className="flex-1 text-sm bg-white text-black font-medium py-2 rounded-full shadow-sm">

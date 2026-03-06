@@ -6,7 +6,7 @@ export default function LandingPage() {
 
   return(
     <>
-   <div className="font-Poppins bg-gray-100 min-h-screen">
+   <div className="font-Poppins bg-gray-100 min-h-screen scroll-smooth">
       
       <div className="flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-40">
         

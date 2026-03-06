@@ -6,7 +6,7 @@ export default function Register() {
 
 
   return (
-    <div className="font-Poppins bg-gray-100">
+    <div className="font-Poppins bg-gray-100 scroll-smooth">
         <div className="flex items-center justify-center max-h-auto px-6 lg:px-50 md:px-20">
             <div className="bg-white p-8 rounded-2xl w-full my-6 max-w-md max-h-auto">
                <button onClick={() => navigate("/landingpage")} className="flex items-center font-semibold text-gray-900 hover:bg-gray-200 rounded-lg px-4 p-1 mb-4 md:text-md text-sm">

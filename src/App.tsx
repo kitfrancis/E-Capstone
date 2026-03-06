@@ -7,10 +7,12 @@ import StudentProfile from "./student/student_view/studentProfile";
 import Deliverablesbuttons from "./student/Dashboard_not_invited_student/Deliverablesbuttons";
 import UploadButton from "./student/Dashboard_not_invited_student/uploadbutton";
 import TaskButton from "./student/Dashboard_not_invited_student/taskbutton";
+import DashboardNotInvited from "./student/student_view/studentDashboard_notInvited";
 import Register from "./auth/Register";
 import LandingPage from "./landingpage";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -20,6 +22,16 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* StudentPages */}
+        <Route
+           path="/dashboardnotinvited"
+          element={
+            <>
+              <Navbar />
+              <DashboardNotInvited />
+            </>
+          }
+        />
+
         <Route
            path="/dashboard"
           element={
@@ -48,7 +60,7 @@ function App() {
           }
         />
         <Route
-          path="/deliverables"
+          path="/deliverablesbutton"
           element={
             <>
               <Navbar />
@@ -75,6 +87,7 @@ function App() {
           }
         />
       </Routes>
+
     </BrowserRouter>
   );
 }

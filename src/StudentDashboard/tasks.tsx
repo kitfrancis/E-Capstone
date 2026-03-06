@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-export default function taskbutton(){
+export default function Tasks() {
     const navigate = useNavigate();
     return(
-          <div className="scroll-smooth font-Poppins">
+        <div className="scroll-smooth font-Poppins">
         <div className="lg:ml-64 mt-23 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
             <h1 className="text-3xl font-semibold text-gray-800 mt-10">Welcome back, Kit Francis!</h1>
             <p className="text-gray-600 mt-2">Track your project progress and manage deliverables.</p>
             <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5">
   
-              <button onClick={() => navigate("/deliverablesbutton")} className="flex-1 text-sm hover:bg-gray-100 text-gray-600 font-medium py-2 rounded-full">
+              <button onClick={() => navigate("/deliverables")} className="flex-1 text-sm hover:bg-gray-100 text-gray-600 font-medium py-2 rounded-full">
                 Deliverables
               </button>
 
