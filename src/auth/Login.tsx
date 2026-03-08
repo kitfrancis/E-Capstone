@@ -14,7 +14,7 @@ export default function Login() {
                 Back to Role Selection
               </button>
                 <h1 className="text-2xl text-center font-medium">Thesis Management System</h1>
-                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as [Role]</p>
+                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">[Role]</span></p>
                 <div className="flex flex-col">
                  <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-6 md:mt-7 lg:mt-8">
   

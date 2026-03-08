@@ -14,7 +14,7 @@ export default function Register() {
                 Back to Role Selection
               </button>
                 <h1 className="text-2xl text-center font-medium">Thesis Management System</h1>
-                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as [Role]</p>
+                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">[Role]</span></p>
                 <div className="flex flex-col">
                  <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-6 md:mt-7 lg:mt-8">
   
@@ -29,21 +29,21 @@ export default function Register() {
             </div>
             <div className="flex flex-col mt-2 gap-1">
                 <label className="text-md font-semibold">Full Name</label>
-                    <input type="text" className="bg-white border border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Full Name" />
+                    <input type="text" className="bg-gray-100  border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Full Name" />
                     <label className="mt-2 font-semibold">Email Address</label>
-                    <input type="email" className="bg-white border border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Example@gmail.com" />
+                    <input type="email" className="bg-gray-100  border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Example@gmail.com" />
                     <label className="mt-2 font-semibold">Password</label>
-                    <input type="password" className="bg-white border border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Create Password" />
+                    <input type="password" className="bg-gray-100  border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Create Password" />
                     <label className="mt-2 font-semibold">Role</label>
-                    <select name="role" id="role" className="bg-white border text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
+                    <select name="role" id="role" className="bg-gray-100  text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
                         <option value="student">Student</option>
                         <option value="adviser">Adviser</option>
                         <option value="instructor">Instructor</option>
                     </select>
                     <label className="mt-2 font-semibold">Student ID</label>
-                    <input type="text" className="bg-white border border-gray-300 text-sm    placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="2023-1309-A" />
+                    <input type="text" className="bg-gray-100  border-gray-300 text-sm    placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="2023-1309-A" />
                     <label className="mt-2 font-semibold">Course</label>
-                    <select name="department" id="department" className="bg-white border text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
+                    <select name="department" id="department" className="bg-gray-100 text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
                         <option value="computer-science">Computer Science</option>
                         <option value="information-technology">Information Technology</option>
                         <option value="software-engineering">Software Engineering</option>
