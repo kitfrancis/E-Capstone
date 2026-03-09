@@ -13,7 +13,10 @@ export default function Navbar() {
     location.pathname === "/dashboard" ||
     location.pathname === "/deliverablesbutton" ||
     location.pathname === "/uploadbutton" ||
-    location.pathname === "/taskbutton"
+    location.pathname === "/taskbutton"  ||
+    location.pathname === "/deliverables" ||
+    location.pathname === "/uploads" ||
+    location.pathname === "/tasks" 
   ) {
     return "Dashboard";
   } else if (location.pathname === "/deliverables") { 
@@ -23,7 +26,8 @@ export default function Navbar() {
     return "Archive";
   } else if (location.pathname === "/Profile") {
     return "Profile";
-  } else {
+  }
+    else {
     return "";
   }
 };
@@ -67,7 +71,10 @@ useEffect(() => {
                             location.pathname.startsWith("/dashboard") ||
                             location.pathname.startsWith("/deliverablesbutton") ||
                             location.pathname.startsWith("/uploadbutton") ||
-                            location.pathname.startsWith("/taskbutton")
+                            location.pathname.startsWith("/taskbutton") ||
+                            location.pathname === "/deliverables" ||
+                            location.pathname === "/uploads" ||
+                            location.pathname === "/tasks" 
                           ? "flex items-center gap-2  py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
                           : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
                       }
@@ -148,7 +155,6 @@ useEffect(() => {
         </svg>
       </button>
 
-      {/* Overlay */}
       {open && (
         <div
           className="fixed inset-0 bg-black/30"
@@ -156,7 +162,6 @@ useEffect(() => {
         ></div>
       )}
 
-      {/* Notification Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
@@ -233,10 +238,13 @@ useEffect(() => {
                    <NavLink
                   to="/dashboard"
                        className={({}) =>
-                            location.pathname.startsWith("/dashboard") ||
-                            location.pathname.startsWith("/deliverablesbutton") ||
-                            location.pathname.startsWith("/uploadbutton") ||
-                            location.pathname.startsWith("/taskbutton")
+                            location.pathname === "/dashboard" ||
+                            location.pathname === "/deliverablesbutton" ||
+                            location.pathname === "/uploadbutton" ||
+                            location.pathname === "/taskbutton"  ||
+                            location.pathname === "/deliverables" ||
+                            location.pathname === "/uploads" ||
+                            location.pathname === "/tasks" 
                             ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
                             : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
                       }

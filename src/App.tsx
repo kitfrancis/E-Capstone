@@ -10,6 +10,9 @@ import TaskButton from "./student/Dashboard_not_invited_student/taskbutton";
 import DashboardNotInvited from "./student/student_view/studentDashboard_notInvited";
 import Register from "./auth/Register";
 import LandingPage from "./landingpage";
+import Tasks from "./StudentDashboard/tasks";
+import Deliverables from "./StudentDashboard/deliverables";
+import Uploads from "./StudentDashboard/upload";
 
 function App() {
 
@@ -83,6 +86,33 @@ function App() {
             <>
               <Navbar />
               <TaskButton />
+            </>
+          }
+        />
+        <Route
+          path="/tasks"
+          element={
+            <>
+              <Navbar />
+              <Tasks />
+            </>
+          }
+        />
+        <Route
+          path="/uploads"
+          element={
+            <>
+              <Navbar />
+              <Uploads />
+            </>
+          }
+        />
+        <Route
+          path="/deliverables"
+          element={
+            <>
+              <Navbar />
+              <Deliverables />
             </>
           }
         />

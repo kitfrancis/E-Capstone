@@ -51,11 +51,11 @@ export default function Dashboard() {
                 Deliverables
               </button>
 
-              <button onClick={() => navigate("/uploadbutton")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
+              <button onClick={() => navigate("/uploads")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
                 Upload New
               </button>
 
-              <button className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
+              <button onClick={() => navigate("/tasks")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
                 Tasks
               </button>
 
