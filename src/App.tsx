@@ -10,14 +10,21 @@ import TaskButton from "./student/Dashboard_not_invited_student/taskbutton";
 import DashboardNotInvited from "./student/student_view/studentDashboard_notInvited";
 import Register from "./auth/Register";
 import LandingPage from "./landingpage";
-import Tasks from "./StudentDashboard/tasks";
-import Deliverables from "./StudentDashboard/deliverables";
-import Uploads from "./StudentDashboard/upload";
+import Tasks from "./student/StudentDashboard/tasks";
+import Deliverables from "./student/StudentDashboard/deliverables";
+import Uploads from "./student/StudentDashboard/upload";
+import { RoleProvider } from "./context/RoleContext";
+import InstructorDashboard from "./Instructor/InstructorDashboard/instructorDashboard";
+import InstructorProfile from "./Instructor/instructorView/instructorProfile"
+import InstructorTask from "./Instructor/InstructorDashboard/instructorTask";
+import Teams from "./Instructor/InstructorDashboard/Teams";
+import Submission from "./Instructor/InstructorDashboard/submission";
 
 function App() {
 
   return (
-    <BrowserRouter>
+    <RoleProvider>
+        <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
          <Route path="/landingpage" element={<LandingPage />} />
@@ -116,9 +123,64 @@ function App() {
             </>
           }
         />
+         {/*instructor Page*/}
+
+      <Route
+        path="/instructorDashboard"
+        element={
+          <>
+            <Navbar/>
+            <InstructorDashboard/>
+          </>
+        }
+      />
+       <Route
+        path="/instructorProfile"
+        element={
+          <>
+            <Navbar/>
+            <InstructorProfile/>
+          </>
+        }
+      />
+      <Route
+        path="/instructorTask"
+        element={
+          <>
+            <Navbar/>
+            <InstructorTask/>
+          </>
+        }
+      />
+      <Route
+        path="/submission"
+        element={
+          <>
+            <Navbar/>
+            <Submission/>
+          </>
+        }
+      />
+      <Route
+        path="/Teams"
+        element={
+          <>
+            <Navbar/>
+            <Teams/>
+          </>
+        }
+      />
+
+     
+
+
       </Routes>
 
+     
+
     </BrowserRouter>
+    </RoleProvider>
+    
   );
 }
 

@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useRole } from "../context/RoleContext";
+
 
 
 export default function Register() {
     const navigate = useNavigate();
+    const { role } = useRole();
 
 
   return (
@@ -14,7 +17,7 @@ export default function Register() {
                 Back to Role Selection
               </button>
                 <h1 className="text-2xl text-center font-medium">Thesis Management System</h1>
-                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">[Role]</span></p>
+                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">{role}</span></p>
                 <div className="flex flex-col">
                  <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-6 md:mt-7 lg:mt-8">
   

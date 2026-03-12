@@ -1,8 +1,16 @@
 import { useNavigate } from "react-router-dom"; 
+import {useRole} from "./context/RoleContext";
 
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  const {setRole} = useRole();
+
+
+ const handleClick = (role: "Student" | "Instructor" | "Adviser") => {
+  setRole(role);
+  navigate("/login");
+};
 
   return(
     <>
@@ -49,7 +57,7 @@ export default function LandingPage() {
                 <li>View feedback from advisers</li>
                 <li>Manage team tasks</li>
             </ul>
-            <button onClick={()=>navigate("/login")} className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
+            <button  onClick={() => handleClick("Student")} className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
                  Continue as Student
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform">
                     <path d="M5 12h14"></path>
@@ -92,7 +100,7 @@ export default function LandingPage() {
                     <li>Approve submissions</li>
                   </ul>
 
-                  <button onClick={()=>navigate("/login")} className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
+                  <button  onClick={() => handleClick("Adviser")} className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
                     Continue as Adviser
 
                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -137,7 +145,7 @@ export default function LandingPage() {
                     <li>Manage project workflow</li>
                   </ul>
 
-                  <button onClick={()=>navigate("/login")} className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
+                  <button  onClick={() => handleClick("Instructor")} className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 sm:px-5 rounded-md mt-6 transition-transform duration-300">
                     Continue as Instructor
 
                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

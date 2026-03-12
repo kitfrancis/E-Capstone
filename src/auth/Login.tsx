@@ -1,8 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useRole } from "../context/RoleContext";
 
 
 export default function Login() {
     const navigate = useNavigate();
+
+    const { role } = useRole();
+
+    const handleLogin = () => {
+  if (!role) return alert("Please select a role first!");
+  switch(role) {
+    case "Student": navigate("/dashboard"); break;
+    case "Instructor": navigate("/instructorDashboard"); break;
+    case "Adviser": navigate("/adviserDashboard"); break;
+  }
+};
 
 
   return (
@@ -14,7 +26,7 @@ export default function Login() {
                 Back to Role Selection
               </button>
                 <h1 className="text-2xl text-center font-medium">Thesis Management System</h1>
-                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">[Role]</span></p>
+                <p className="text-center text-md  text-gray-500 mt-2">Login or Register as <span className="font-semibold">{role}</span></p>
                 <div className="flex flex-col">
                  <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-6 md:mt-7 lg:mt-8">
   
@@ -32,7 +44,7 @@ export default function Login() {
                 <input type="text" className="bg-gray-100  border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Example@gmail.com" />
                 <label className="font-semibold mt-3">Password</label>
                 <input type="password" className="bg-gray-100 border-gray-300 text-sm placeholder-gray-600 rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="Enter your password" />
-                 <button onClick={() => navigate("/dashboard")} type="submit" className=" flex items-center gap-2 justify-center bg-black text-white py-2 rounded-md hover:bg-gray-800 transition-colors duration-300 mt-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-log-in mr-2 h-4 w-4" aria-hidden="true"><path d="m10 17 5-5-5-5"></path><path d="M15 12H3"></path><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path></svg> Login</button>
+                 <button onClick={() => handleLogin()   } type="submit" className=" flex items-center gap-2 justify-center bg-black text-white py-2 rounded-md hover:bg-gray-800 transition-colors duration-300 mt-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-log-in mr-2 h-4 w-4" aria-hidden="true"><path d="m10 17 5-5-5-5"></path><path d="M15 12H3"></path><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path></svg> Login</button>
                     
            </div>
              

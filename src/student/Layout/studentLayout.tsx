@@ -1,14 +1,12 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../navbar/navbar";
 
-export default function studentLayout() {
+import Navbar from "../navbar/navbar";
+import { Outlet } from "react-router-dom";
+
+export default function StudentLayout() {
   return (
-    <div>
+    <>
       <Navbar />
-      
-      <div className="p-4">
-        <Outlet /> 
-      </div>
-    </div>
+      <Outlet />
+    </>
   );
 }

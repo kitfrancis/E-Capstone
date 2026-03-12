@@ -1,12 +1,67 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useRole } from "../../context/RoleContext";
 
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [open, setOpen] = useState(false);
      const location = useLocation();
+      const { role } = useRole(); 
+
+
+
+   
+type RoleType = "Student" | "Instructor" | "Adviser";
+
+interface MenuItem {
+  name: string;
+  path: string;
+   group?: string[];
+}
+
+const menuData: Record<RoleType, MenuItem[]> = {
+  Student: [
+    { name: "Dashboard",
+      path: "/dashboard",
+      group: [
+        "/dashboard",
+        "/deliverables",
+        "/uploads",
+        "/tasks",
+      ],
+     },
+    { name: "Archive", path: "/studentArchive" },
+    { name: "Profile", path: "/Profile" },
+  ],
+  Instructor: [
+     {
+      name: "Dashboard",
+      path: "/instructorDashboard",
+      group: [
+        "/instructorDashboard",
+        "/instructorTask",
+        "/submission",
+        "/Teams",
+      ],
+    },
+    { name: "Archive", path: "/studentArchive" },
+    { name: "Profile", path: "/instructorProfile" },
+  ],
+  Adviser: [
+    { name: "Dashboard", path: "/adviserDashboard" },
+    { name: "Archive", path: "/studentArchive" },
+    { name: "Profile", path: "/Profile" },
+  ],
+};
+
+
+const menuItems: MenuItem[] = menuData[role as RoleType] || menuData["Student"];
+
+
+
+     
 
     const getPageTitle = () => {
   if (
@@ -16,7 +71,11 @@ export default function Navbar() {
     location.pathname === "/taskbutton"  ||
     location.pathname === "/deliverables" ||
     location.pathname === "/uploads" ||
-    location.pathname === "/tasks" 
+    location.pathname === "/tasks" ||
+    location.pathname === "/instructorDashboard" ||
+    location.pathname === "/instructorTask" ||
+    location.pathname === "/submission" ||
+    location.pathname === "/Teams"
   ) {
     return "Dashboard";
   } else if (location.pathname === "/deliverables") { 
@@ -26,6 +85,9 @@ export default function Navbar() {
     return "Archive";
   } else if (location.pathname === "/Profile") {
     return "Profile";
+  }
+  else if (location.pathname === "/instructorProfile"){
+    return "instructorProfile";
   }
     else {
     return "";
@@ -58,53 +120,32 @@ useEffect(() => {
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-md truncate">Kit Francis S. Besa</p>
                         <span className="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded-full">
-                          Student
+                          {role}
                         </span>
                   </div>
                 </div>
             </div>
             
-           <nav className="flex flex-col mt-4 px-4 gap-3">
-              <NavLink
-                  to="/dashboard"
-                       className={({}) =>
-                            location.pathname.startsWith("/dashboard") ||
-                            location.pathname.startsWith("/deliverablesbutton") ||
-                            location.pathname.startsWith("/uploadbutton") ||
-                            location.pathname.startsWith("/taskbutton") ||
-                            location.pathname === "/deliverables" ||
-                            location.pathname === "/uploads" ||
-                            location.pathname === "/tasks" 
-                          ? "flex items-center gap-2  py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
-                      }
->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
-                    Dashboard
-                  </NavLink>
-              <NavLink
-                  to="/studentArchive"
-                       className={({ isActive }) =>
-                        isActive
-                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "flex items-center gap-2  py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
-                      }
->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
-                    Archive
-                  </NavLink>
-              <NavLink
-                  to="/Profile"
-                       className={({ isActive }) =>
-                        isActive
-                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
-                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl"
-                      }
->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Profile
-                  </NavLink>
-           </nav>
+                    <nav className="flex flex-col mt-4 px-4 gap-3">
+                    {menuItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) => {
+              const groupedActive =
+                item.group?.includes(location.pathname);
+
+              const active = isActive || groupedActive;
+
+              return active
+                ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl";
+            }}
+          >
+            {item.name}
+          </NavLink>
+        ))}
+          </nav>
 
            <div className="p-4 border-t mt-auto border-gray-300">
              <a href="/login" className=" text-red-600 hover:text-red-800 font-medium text-md">Log out</a>
@@ -131,7 +172,7 @@ useEffect(() => {
     </button>
     <div className="flex flex-col">
     <h1 className="text-xl text-gray-800 font-semibold capitalize">{getPageTitle()}</h1>
-    <p className="hidden sm:block">Student view</p>
+    <p className="hidden sm:block">{role} view</p>
     </div>
 
     </div>
@@ -229,54 +270,31 @@ useEffect(() => {
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-md truncate">Kit Francis S. Besa</p>
                         <span className="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded-full">
-                          Student
+                          {role}
                         </span>
                   </div>
                 </div>
             </div>
-              <nav className="flex flex-col mt-4 px-4 gap-3">
-                   <NavLink
-                  to="/dashboard"
-                       className={({}) =>
-                            location.pathname === "/dashboard" ||
-                            location.pathname === "/deliverablesbutton" ||
-                            location.pathname === "/uploadbutton" ||
-                            location.pathname === "/taskbutton"  ||
-                            location.pathname === "/deliverables" ||
-                            location.pathname === "/uploads" ||
-                            location.pathname === "/tasks" 
-                            ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                            : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
-                      }
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
-                    Dashboard
-                  </NavLink>
+             <nav className="flex flex-col mt-4 px-4 gap-3">
+            {menuItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) => {
+              const groupedActive =
+                item.group?.includes(location.pathname);
 
-               
-              <NavLink
-                  to="/studentArchive"
-                       className={({ isActive }) =>
-                        isActive
-                          ? "flex items-center  gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
-                      }
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
-                    Archive
-                  </NavLink>
-              <NavLink
-                  to="/Profile"
-                       className={({ isActive }) =>
-                        isActive
-                          ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-md"
-                          : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-md"
-                      }
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Profile
-                  </NavLink>
-           </nav>
+              const active = isActive || groupedActive;
+
+              return active
+                ? "flex items-center gap-2 py-2 px-6 bg-blue-600 text-white rounded-2xl font-medium text-xl"
+                : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl";
+            }}
+          >
+            {item.name}
+          </NavLink>
+        ))}
+  </nav>
 
            <div className="p-3 border-t mt-auto border-gray-300">
              <a href="/login" className=" text-red-600 hover:text-red-800 font-medium text-md">Log out</a>
