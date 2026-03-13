@@ -59,9 +59,35 @@ export default function Tasks() {
               </button>
 
             </div>
-            <div className=" flex flex-col items-center max-h-auto bg-gray-100 rounded-lg mt-5 p-4">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-calendar h-12 w-12 text-gray-400 mb-4" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg> 
-             <h1 className="text-gray-600">No tasks assigned yet</h1>
+            <div className="bg-gray-100 mt-4 md:mt-6 rounded-lg p-4 px-7  mb-6">
+               <div className="flex flex-col mt-4 md:mt-2 ">
+                <div className="flex justify-between">
+                  <div className="flex flex-col">
+                      <h1 className="font-medium text-lg">Complete User Interface Mockups</h1>
+                    <p className="text-gray-500">Team Name </p>
+                  </div>
+                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-green-500 text-white text-xs font-medium gap-1 h-6 "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-check-big h-3 w-3 mr-1"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg> Completed</span>
+                </div>
+               </div>
+                <div className="flex flex-col mt-4">
+                    <h1 className="text-gray-500 text-sm ">Design and finalize all user interface mockups for application.</h1>
+                    <h1 className="text-gray-500 text-sm ">Due: Dec 01, 2004</h1>
+                </div>
+            </div>
+            <div className="bg-gray-100 mt-4 md:mt-6 rounded-lg p-4 px-7  mb-6">
+               <div className="flex flex-col mt-4 md:mt-2 ">
+                <div className="flex justify-between">
+                  <div className="flex flex-col">
+                      <h1 className="font-medium text-lg">Complete User Interface Mockups</h1>
+                    <p className="text-gray-500">Team Name </p>
+                  </div>
+                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-blue-500 text-white text-xs font-medium gap-1 h-6 "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-check-big h-3 w-3 mr-1"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>InProgress</span>
+                </div>
+               </div>
+                <div className="flex flex-col mt-4">
+                    <h1 className="text-gray-500 text-sm ">Developer user authentication system with role-based access control.</h1>
+                    <h1 className="text-gray-500 text-sm flex items-center justify-between ">Due: Dec 15, 2004 <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-red-600 text-white text-xs font-medium gap-1 h-6 ">Overdue</span></h1>
+                </div>
             </div>
         </div>
     </div>

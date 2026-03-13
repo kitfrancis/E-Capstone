@@ -19,12 +19,16 @@ interface MenuItem {
   name: string;
   path: string;
    group?: string[];
+   icon?: React.ReactNode;
 }
 
 const menuData: Record<RoleType, MenuItem[]> = {
   Student: [
     { name: "Dashboard",
       path: "/dashboard",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+      ),
       group: [
         "/dashboard",
         "/deliverables",
@@ -32,13 +36,24 @@ const menuData: Record<RoleType, MenuItem[]> = {
         "/tasks",
       ],
      },
-    { name: "Archive", path: "/studentArchive" },
-    { name: "Profile", path: "/Profile" },
+    { name: "Archive", path: "/studentArchive",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
+      ),
+     },
+    { name: "Profile", path: "/Profile",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      ),
+     },
   ],
   Instructor: [
      {
       name: "Dashboard",
       path: "/instructorDashboard",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-layout-dashboard h-5 w-5"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+      ),
       group: [
         "/instructorDashboard",
         "/instructorTask",
@@ -46,8 +61,16 @@ const menuData: Record<RoleType, MenuItem[]> = {
         "/Teams",
       ],
     },
-    { name: "Archive", path: "/studentArchive" },
-    { name: "Profile", path: "/instructorProfile" },
+    { name: "Archive", path: "/studentArchive",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-archive h-5 w-5"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
+      ),
+     },
+    { name: "Profile", path: "/instructorProfile",
+       icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user h-5 w-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      ),
+     },
   ],
   Adviser: [
     { name: "Dashboard", path: "/adviserDashboard" },
@@ -142,6 +165,7 @@ useEffect(() => {
                 : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl";
             }}
           >
+            {item.icon}
             {item.name}
           </NavLink>
         ))}
@@ -291,6 +315,7 @@ useEffect(() => {
                 : "flex items-center gap-2 py-2 px-6 text-gray-900 hover:bg-gray-100 rounded-2xl font-medium text-xl";
             }}
           >
+            {item.icon}
             {item.name}
           </NavLink>
         ))}

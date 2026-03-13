@@ -16,7 +16,7 @@ export default function instructorDashboard() {
 
   return (
     <div className="scroll-smooth font-Poppins">
-        <div className="lg:ml-64 mt-23 sm:mt-25 mx-3 px-3 max-h-auto lg:px-5 ">
+        <div className="lg:ml-64 mt-15 sm:mt-20 mx-3 px-3 max-h-auto lg:px-5 ">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center">
             <div>
               <h1 className="text-3xl font-semibold text-gray-800 mt-10">Instructor Dashboard</h1>
@@ -75,10 +75,39 @@ export default function instructorDashboard() {
               </button>
 
             </div>
-             <div className="flex flex-col items-center  max-h-auto bg-gray-100 rounded-lg mt-5 p-4">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-file-text h-12 w-12 text-gray-400 mb-4" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
-               <h1 className="text-gray-600">No deliverables uploaded yet</h1>
-               <p className="text-gray-500 text-sm md:text-md ">Upload your first delivarable to get started.</p>
+             <div className="bg-gray-100 mt-4 md:mt-6 rounded-lg p-4 px-7  mb-6 hover:shadow-md">
+               <div className="flex flex-col mt-4 md:mt-2 ">
+                <div className="flex justify-between">
+                  <div className="flex flex-col">
+                      <h1 className="font-medium text-md">Team Name</h1>
+                    <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                  </div>
+                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-black text-gray-100 text-xs font-medium gap-1 h-6 "> Development</span>
+                </div>
+               </div>
+               <div className="grid grid-cols-3  mt-2 md:mt-4 pb-2 space-y-1 space-x-1">
+                    <div className="flex flex-col justify-center mt-4">
+                        <h1 className="text-gray-500 text-sm md:text-md">Members:</h1>
+                        <p className="font-medium text-sm md:text-md">1</p>
+                    </div>
+                    <div className="flex flex-col  justify-center mt-4">
+                        <h1 className="text-gray-500 text-sm md:text-md">Deliverables:</h1>
+                        <p className="font-medium text-sm md:text-md">2</p>
+                    </div>
+                    <div className="flex flex-col  justify-center mt-4">
+                        <h1 className="text-gray-500 text-sm md:text-md">Tasks:</h1>
+                        <p className="font-medium text-sm md:text-md">1/2 Complete</p>
+                    </div>
+               </div>
+               <div className="flex flex-col border-t border-gray-300 pt-4 gap-1 pb-4">
+                  <label className="font-medium text-md">Update Phase</label>
+                  <select name="department" id="department" className="bg-white  text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-medium">
+                        <option value="computer-science">Computer Science</option>
+                        <option value="information-technology">Information Technology</option>
+                        <option value="software-engineering">Software Engineering</option>
+                        <option value="BLIS">BLIS</option>
+                    </select>
+               </div>
             </div>
             {openCreateTeam && (
   <div className="fixed inset-0 z-50 flex items-center justify-center">

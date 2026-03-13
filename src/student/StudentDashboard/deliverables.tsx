@@ -61,10 +61,29 @@ export default function Deliverables(){
               </button>
 
             </div>
-             <div className="flex flex-col items-center  max-h-auto bg-gray-100 rounded-lg mt-5 p-4">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-file-text h-12 w-12 text-gray-400 mb-4" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
-               <h1 className="text-gray-600">No deliverables uploaded yet</h1>
-               <p className="text-gray-500 text-sm md:text-md ">Upload your first delivarable to get started.</p>
+             <div className="bg-gray-100 mt-4 md:mt-6 rounded-lg p-4 px-7  mb-6">
+               <div className="flex flex-col mt-4 md:mt-2 ">
+                <div className="flex justify-between">
+                  <div className="flex flex-col">
+                      <h1 className="font-medium text-lg">Project Proposal.pdf</h1>
+                    <p className="text-gray-500">Phase:Proposal • Version 2 </p>
+                  </div>
+                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-green-500 text-white text-xs font-medium gap-1 h-6 "> Approved</span>
+                </div>
+               </div>
+               <div className="flex justify-between items-center mt-4 md:mt-6 pb-3">
+                <h1 className="text-gray-500 text-sm md:text-md">Oct 24, 2004</h1>
+                <h1 className="text-gray-500 text-sm md:text-md">Size 2.0MB</h1>
+              </div>
+                <div className="border-t border-gray-300 pt-3">
+                  <div className="flex items-center gap-2">
+                      <h1 className="flex flex-row gap-2 font-medium mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-square h-4 w-4 text-gray-500"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>1 Comment</h1>
+                  </div>
+                  <button className="font-medium items-center justify-center w-full border border-gray-300 rounded-lg px-2 py-1 hover:bg-gray-300 transition-colors">
+                    View Comments
+                  </button>
+
+                </div>
             </div>
         </div>
     </div>
