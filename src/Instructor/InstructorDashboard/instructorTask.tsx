@@ -63,7 +63,7 @@ export default function instructorTask() {
 
             <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5 md:mt-10">
   
-              <button onClick={() => navigate("/Teams")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
+              <button onClick={() => navigate("/instructorDashboard")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
                 Teams
               </button>
 
@@ -99,7 +99,7 @@ export default function instructorTask() {
                       <h1 className="font-medium text-lg">Complete User Interface Mockups</h1>
                     <p className="text-gray-500">Team Name </p>
                   </div>
-                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-blue-500 text-white text-xs font-medium gap-1 h-6 ">In Progress</span>
+                     <span className="inline-flex items-center justify-center rounded-lg border px-2 bg-blue-500 text-white text-xs font-medium gap-1 h-6 ">InProgress</span>
                 </div>
                </div>
                 <div className="flex flex-col mt-4">

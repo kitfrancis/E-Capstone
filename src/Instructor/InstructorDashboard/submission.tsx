@@ -64,7 +64,7 @@ export default function submission() {
 
             <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5 md:mt-10">
   
-              <button onClick={() => navigate("/Teams")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
+              <button onClick={() => navigate("/instructorDashboard")} className="flex-1 text-sm text-gray-600 font-medium py-2 rounded-full hover:bg-gray-100">
                 Teams
               </button>
 

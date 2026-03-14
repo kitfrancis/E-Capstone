@@ -46,7 +46,7 @@ export default function Uploads() {
         </div>
             <div className="bg-gray-200 rounded-full p-1 flex w-full max-w-auto mt-5">
   
-              <button onClick={() => navigate("/deliverables")} className="flex-1 text-sm hover:bg-gray-100 text-gray-600 font-medium py-2 rounded-full">
+              <button onClick={() => navigate("/dashboard")} className="flex-1 text-sm hover:bg-gray-100 text-gray-600 font-medium py-2 rounded-full">
                 Deliverables
               </button>
 

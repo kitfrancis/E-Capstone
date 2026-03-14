@@ -19,6 +19,11 @@ import InstructorProfile from "./Instructor/instructorView/instructorProfile"
 import InstructorTask from "./Instructor/InstructorDashboard/instructorTask";
 import Teams from "./Instructor/InstructorDashboard/Teams";
 import Submission from "./Instructor/InstructorDashboard/submission";
+import AdviserDashboard from "./Adviser/AdviserView/adviserDashboard";
+import AdviserProfile from "./Adviser/AdviserView/adviserProfile";
+import ReviewDeliverables from "./Adviser/AdviserDashboard/reviewDeliverables";
+import TrackProgress from "./Adviser/AdviserDashboard/trackProgress";
+
 
 function App() {
 
@@ -123,7 +128,7 @@ function App() {
             </>
           }
         />
-         {/*instructor Page*/}
+         {/*instructorPages*/}
 
       <Route
         path="/instructorDashboard"
@@ -171,7 +176,48 @@ function App() {
         }
       />
 
+
+  {/*AdviserPages*/}
+
+      <Route
+        path="/adviserDashboard"
+        element={
+          <>
+            <Navbar/>
+            <AdviserDashboard/>
+          </>
+        }
+      />
+
+      <Route
+        path="/adviserProfile"
+        element={
+          <>
+            <Navbar/>
+            <AdviserProfile/>
+          </>
+        }
+      />
+      <Route
+        path="/reviewDeliverables"
+        element={
+          <>
+            <Navbar/>
+            <ReviewDeliverables/>
+          </>
+        }
+      />
+      <Route
+        path="/trackProgress"
+        element={
+          <>
+            <Navbar/>
+            <TrackProgress/>
+          </>
+        }
+      />
      
+
 
 
       </Routes>

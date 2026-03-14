@@ -26,7 +26,7 @@ export default function instructorProfile(){
                     <input type="text" className="bg-white border border-gray-300 text-sm placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[full name]" />
                     <label className="mt-2 font-semibold">Email Address</label>
                     <input type="email" className="bg-white border border-gray-300 text-sm placeholder-black rounded-lg px-4 py-2 h-9 sm:h-10" placeholder="[email address]" />
-                    <label className="mt-2 font-semibold">Student ID</label>
+                    <label className="mt-2 font-semibold">Department</label>
                     <select name="department" id="department" className="bg-white border text-sm border-gray-300 rounded-lg px-4 py-2 h-9 sm:h-10 font-bold">
                         <option value="computer-science">Computer Science</option>
                         <option value="information-technology">Information Technology</option>
